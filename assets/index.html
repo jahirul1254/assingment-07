@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>English Janala</title>
+    <!-- font awesome  -->
+    <script
+      src="https://kit.fontawesome.com/71f5a79913.js"
+      crossorigin="anonymous"
+    ></script>
+
+
+    
+    <!-- font family  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- tailwind css with daisy  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <style>
+    .baloo {
+      font-family: "Baloo Da 2", sans-serif;
+    }
+    .nato {
+      font-family: "Noto Serif Bengali", serif;
+    }
+    .hind {
+      font-family: "Hind Siliguri", sans-serif;
+    }
+    /* active btn  */
+    .active {
+      background-color: #422ad5;
+      color: white;
+    }
+  </style>
+  <body class="baloo">
+    <!-- header section  -->
+    <header>
+      
+    
+      <nav
+        class="max-w-screen-xl mx-auto flex justify-between items-center py-5"
+      >
+        <!-- logo -->
+        <div>
+          <h3
+            class="flex items-center baloo text-2xl btn btn-ghost px-0 hover:bg-white hover:border-0 hover:drop-shadow-none hover:shadow-none transition-all duration-300"
+          >
+            <span class="font-semibold">English</span>
+            <img class="w-12" src="https://i.ibb.co/6cy5bnPz/logo.png" alt="" />
+            জানালা
+          </h3>
+        </div>
+        <!-- nav link  -->
+        <div class="flex gap-5">
+          <a
+            href="#faq"
+            id="faq-link"
+            class="nav-link btn flex items-center justify-center gap-2 border border-[#422AD5] rounded-md text-[#422AD5] hover:bg-[#422AD5] hover:text-white hover:cursor-pointer transition duration-100 ease-in-out text-lg font-semibold"
+          >
+            <i class="fa-solid fa-circle-question"></i>
+            FAQ
+          </a>
+
+          <a
+            href="#vocabulary"
+            id="learn-link"
+            class="nav-link btn flex items-center justify-center gap-2 border border-[#422AD5] rounded-md text-[#422AD5] hover:bg-[#422AD5] hover:text-white hover:cursor-pointer transition duration-100 ease-in-out text-lg font-semibold"
+          >
+            <i class="fa-solid fa-book-open"></i>
+            Learn
+          </a>
+          <a
+            id="logout-btn"
+            class="btn flex items-center justify-center gap-2 border border-[#422AD5] rounded-md text-[#422AD5] hover:bg-[#422AD5] hover:text-white hover:cursor-pointer transition duration-100 ease-in-out text-lg font-semibold"
+          >
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            Logout
+          </a>
+        </div>
+      </nav>
+    </header>
+    <!-- main section  -->
+    <main class="max-w-screen-xl mx-auto mt-5">
+      <!-- banner  -->
+      <section id="logout" class="flex justify-between items-center">
+        <!-- info  -->
+        <div class="">
+          <h2 class="text-5xl font-bold baloo">
+            <span class="text-[#00BCFF]">English</span> is Easy!!
+          </h2>
+          <p class="my-6">
+            আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
+            <br />
+            আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে
+            <br />
+            অন্য একটি Level এ
+          </p>
+          <form class="w-3/5">
+            <fieldset class="fieldset">
+              <input
+                id="user-name"
+                type="text"
+                class="border border-gray-300 outline outline-gray-300 bg-white rounded-md text-sm text-gray-600 py-2 px-2 mb-2 focus:font-semibold"
+                placeholder="Enter your name"
+              />
+
+              <input
+                id="password"
+                type="password"
+                class="border border-gray-300 outline outline-gray-300 bg-white rounded-md text-sm text-gray-600 py-2 px-2 focus:font-semibold"
+                placeholder="Enter Login Code(123456)"
+              />
+              <button
+                id="login-btn"
+                class="max-w-max bg-[#422AD5] rounded-lg text-white font-semibold text-base px-4 py-2 mt-4 hover:cursor-pointer"
+              >
+                Get Started
+              </button>
+            </fieldset>
+          </form>
+        </div>
+        <!-- image -->
+        <div class="basis-3/5">
+          <img
+            class="w-4/5 justify-self-end flex"
+            src="https://i.ibb.co/xtLgtFp3/hero-student.png"
+            alt=""
+          />
+        </div>
+      </section>
+      <!-- vocabulary  -->
+      <section id="vocabulary" class="login mt-10 mb-52 hidden">
+        <h3 class="text-center text-3xl font-bold mb-10">
+          <span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
+        </h3>
+        <div
+          id="level-container"
+          class="flex justify-center items-center flex-wrap gap-5"
+        ></div>
+        <!-- vocabulary-->
+        <div class="bg-gray-100 rounded-2xl mt-10">
+          <!-- loading  -->
+          <div id="loader" class="text-center py-10 hidden">
+            <span class="loading loading-spinner loading-xl"></span>
+          </div>
+          <div id="vocabulary-container" class="grid grid-cols-3 gap-5 p-5">
+            <!-- default text  -->
+            <div class="text-center py-20 col-span-3">
+              <p class="text-sm text-gray-400">
+                আপনি এখনো কোন Lesson Select করেন নি
+              </p>
+              <h4 class="text-3xl font-semibold mt-2">
+                একটি Lesson Select করুন।
+              </h4>
+            </div>
+          </div>
+        </div>
+        <!-- open modal  -->
+        <dialog id="wordDetails" class="modal">
+          <div class="modal-box">
+            <div id="details-containers" class="mb-4"></div>
+
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button
+                id="close"
+                class="px-8 py-2 text-white bg-[#422AD5] rounded-lg hover:cursor-pointer"
+              >
+                Complete Learning
+              </button>
+            </form>
+          </div>
+        </dialog>
+      </section><br>
+      <br />
+      <br />
+      <br />
+
+
+      <!-- Let's Learn Vocabularies  -->
+      <div class="space-y-2 text-center">
+			<h2 class="text-5xl font-bold baloo">
+            <span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
+          </h2>
+		</div><br /><br />
+
+
+
+
+<div class="text-white flex justify-center gap-2 mt-5">
+  <button class="btn btn-secondary flex items-center gap-1">
+    <img src="./fa-book-open.png" alt="book" class="w-4 h-4" />
+    Lesson -1
+  </button>
+  <button class="btn btn-secondary flex items-center gap-1">
+    <img src="./fa-book-open.png" alt="book" class="w-4 h-4" />
+    Lesson -2
+  </button>
+  <button class="btn btn-secondary flex items-center gap-1">
+    <img src="./fa-book-open.png" alt="book" class="w-4 h-4" />
+    Lesson -3
+  </button>
+  <button class="btn btn-secondary flex items-center gap-1">
+    <img src="./fa-book-open.png" alt="book" class="w-4 h-4" />
+    Lesson -4
+  </button>
+  <button class="btn btn-secondary flex items-center gap-1">
+    <img src="./fa-book-open.png" alt="book" class="w-4 h-4" />
+    Lesson -5
+  </button>
+  <button class="btn btn-secondary flex items-center gap-1">
+    <img src="./fa-book-open.png" alt="book" class="w-4 h-4" />
+    Lesson -6
+  </button>
+  <button class="btn btn-secondary flex items-center gap-1">
+    <img src="./fa-book-open.png" alt="book" class="w-4 h-4" />
+    Lesson -7
+  </button>
+  
+ 
+
+</div>
+<br>
+<br>
+<br>
+
+<div class="p-6 py-12 dark:bg-violet-600 dark:text-gray-50">
+	<div class="container mx-auto">
+		
+			<div class="space-x-2 text-center py-2 lg:py-0">
+        
+				<span>আপনি এখনো কোন Lesson Select করেন ন</span> <br>
+        <span class="font-bold text-lg">একটি Lesson Select করুন।</span> <br>
+       
+				
+			</div>
+			
+		</div>
+	</div>
+</div>
+     
+
+
+       </nav><br />
+       <br />
+       <br />
+				
+			
+	</div>
+</div>
+
+
+      <!-- FAQ section  -->
+
+      <section class="py-6 sm:py-12 dark:bg-gray-100 dark:text-gray-800">
+	<div class="container p-6 mx-auto space-y-8">
+		<div class="space-y-2 text-center">
+			<h2 class="text-5xl font-bold baloo">
+            <span class="text-[#00BCFF]">Frequently</span> Asked Questions
+          </h2>
+		</div>
+
+      <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+  <input type="radio" name="my-accordion-2" checked="checked" />
+  <div class="collapse-title font-semibold">1. How can I start learning English on this website?</div>
+  <div class="collapse-content text-sm">Type what you want to learn. I’ll help you practice, correct, and improve.</div>
+</div>
+
+<div class="collapse collapse-arrow bg-base-100 border border-base-300">
+  <input type="radio" name="my-accordion-2" checked="checked" />
+  <div class="collapse-title font-semibold">2. Is this website free to use?</div>
+  <div class="collapse-content text-sm">Yes, this website has a free version. Some features need a paid plan.</div>
+</div>
+<div class="collapse collapse-arrow bg-base-100 border border-base-300">
+  <input type="radio" name="my-accordion-2" checked="checked" />
+  <div class="collapse-title font-semibold">3. Do I need to create an account?</div>
+  <div class="collapse-content text-sm">No, you can use it without an account, but some features need one.</div>
+</div>
+<div class="collapse collapse-arrow bg-base-100 border border-base-300">
+  <input type="radio" name="my-accordion-2" checked="checked" />
+  <div class="collapse-title font-semibold">4. How can I build my English vocabulary?</div>
+  <div class="collapse-content text-sm">Read daily, learn new words, use them in sentences, and practice with me.</div>
+</div>
+<div class="collapse collapse-arrow bg-base-100 border border-base-300">
+  <input type="radio" name="my-accordion-2" checked="checked" />
+  <div class="collapse-title font-semibold">5. Do you offer certificates for completed courses?</div>
+  <div class="collapse-content text-sm">No, I don't offer certificates for courses.</div>
+</div>
+    </main>
+    <!-- footer section  -->
+    <footer class="border-t-2 border-gray-100 mt-52">
+      <div class="max-w-screen-xl mx-auto py-18">
+        <div class="flex justify-between items-center">
+          <div>
+            <h3
+              class="flex baloo text-lg px-0 hover:bg-white hover:border-0 hover:drop-shadow-none hover:shadow-none transition-all duration-300 gap-1"
+            >
+              <span class="font-semibold">English</span>
+              <img class="w-8" src="https://i.ibb.co/6cy5bnPz/logo.png" alt="" />
+              <span class="font-semibold">জানালা</span>
+            </h3>
+            <div class="mt-3">
+              <p class="font-semibold font-lg">ইংরেজি শিখুন সহজে</p>
+              <p class="text-sm font-medium mt-2">
+                Providing ED-Tech Applications since 2025
+              </p>
+            </div>
+          </div>
+          <div class="self-end">
+            <p class="text-gray-400 font-semibold mb-2">FOLLOW US</p>
+            <div class="flex justify-between items-center gap-3">
+              <a href="https://www.facebook.com/" target="_blank"
+                ><img src="https://i.ibb.co/XfVTzJqD/fb-thumb.png" alt="facebook"
+              /></a>
+              <a href="https://www.youtube.com/" target="_blank"
+                ><img src="https://i.ibb.co/x8hLP07f/youtube-thumb.png" alt=""
+              /></a>
+              <a href="https://www.instagram.com/" target="_blank"
+                ><img src="https://i.ibb.co/5W8kpBvH/instagram-thumb.png" alt=""
+              /></a>
+              <a href="https://github.com/" target="_blank"
+                ><img src="https://i.ibb.co/spSpcrPj/github-thumb.png" alt=""
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- js script  -->
+    
+    <script src="./script/index.js"></script>
+    <script src="./script/app.js"></script>
+    <script src="./script/toggle.js"></script>
+   
+
+    
+  </body>
+</html>
