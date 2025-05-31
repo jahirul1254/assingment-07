@@ -4,6 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>English Janala</title>
+
+
+<style>
+    body { font-family: Arial; }
+    .btn { background-color: white; border: none; font-size: 24px; cursor: pointer; }
+    .modal {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); display: flex;
+      align-items: center; justify-content: center; z-index: 1000;
+    }
+    .modal-content {
+      background-color: white; padding: 20px; border-radius: 10px;
+      max-width: 400px; width: 90%; text-align: center;
+    }
+    .hidden { display: none; }
+    .tag {
+      display: inline-block; background-color: #e0e0e0;
+      padding: 5px 10px; margin: 5px; border-radius: 5px;
+    }
+    .close-btn {
+      background-color: #4f46e5; color: white; padding: 10px 15px;
+      border: none; border-radius: 5px; margin-top: 20px;
+      cursor: pointer;
+    }
+    .close-btn:hover { background-color: #4338ca; }
+  </style>
+
+
+
+
     <!-- font awesome  -->
     <script
       src="https://kit.fontawesome.com/71f5a79913.js"
@@ -42,7 +72,8 @@
       background-color: #422ad5;
       color: white;
     }
-  </style>
+  </style> 
+  
   <body class="baloo">
     <!-- header section  -->
     <header>
@@ -199,44 +230,71 @@
 
 
 <div class="text-white flex justify-center gap-2 mt-5">
-  <button class="btn btn-secondary flex items-center gap-1">
+  <button   class="nav-link btn flex items-center justify-center gap-2 border border-[#422AD5] rounded-md text-[#422AD5] hover:bg-[#422AD5] hover:text-white hover:cursor-pointer transition duration-100 ease-in-out text-lg font-semibold">
     <img src="./fa-book-open.png" alt="book" class="w-4 h-4" />
     Lesson -1
   </button>
-  <button class="btn btn-secondary flex items-center gap-1">
+  <button  onclick="loadCategory('${element.data}')" class="nav-link btn flex items-center justify-center gap-2 border border-[#422AD5] rounded-md text-[#422AD5] hover:bg-[#422AD5] hover:text-white hover:cursor-pointer transition duration-100 ease-in-out text-lg font-semibold">
     <img src="./fa-book-open.png" alt="book" class="w-4 h-4" />
     Lesson -2
   </button>
-  <button class="btn btn-secondary flex items-center gap-1">
+  <button onclick="loadCategory('${element.data}')" class="nav-link btn flex items-center justify-center gap-2 border border-[#422AD5] rounded-md text-[#422AD5] hover:bg-[#422AD5] hover:text-white hover:cursor-pointer transition duration-100 ease-in-out text-lg font-semibold">
     <img src="./fa-book-open.png" alt="book" class="w-4 h-4" />
     Lesson -3
   </button>
-  <button class="btn btn-secondary flex items-center gap-1">
+  <button onclick="loadCategory('${element.data}')" class="nav-link btn flex items-center justify-center gap-2 border border-[#422AD5] rounded-md text-[#422AD5] hover:bg-[#422AD5] hover:text-white hover:cursor-pointer transition duration-100 ease-in-out text-lg font-semibold">
     <img src="./fa-book-open.png" alt="book" class="w-4 h-4" />
     Lesson -4
   </button>
-  <button class="btn btn-secondary flex items-center gap-1">
+  <button onclick="loadCategory('${element.data}')" class="nav-link btn flex items-center justify-center gap-2 border border-[#422AD5] rounded-md text-[#422AD5] hover:bg-[#422AD5] hover:text-white hover:cursor-pointer transition duration-100 ease-in-out text-lg font-semibold">
     <img src="./fa-book-open.png" alt="book" class="w-4 h-4" />
     Lesson -5
   </button>
-  <button class="btn btn-secondary flex items-center gap-1">
+  <button onclick="loadCategory('${element.data}')" class="nav-link btn flex items-center justify-center gap-2 border border-[#422AD5] rounded-md text-[#422AD5] hover:bg-[#422AD5] hover:text-white hover:cursor-pointer transition duration-100 ease-in-out text-lg font-semibold">
     <img src="./fa-book-open.png" alt="book" class="w-4 h-4" />
     Lesson -6
   </button>
-  <button class="btn btn-secondary flex items-center gap-1">
-    <img src="./fa-book-open.png" alt="book" class="w-4 h-4" />
-    Lesson -7
-  </button>
-  
  
+   <!-- Info Button -->
+  <button class="nav-link btn flex items-center justify-center gap-2 border border-[#422AD5] rounded-md text-[#422AD5] hover:bg-[#422AD5] hover:text-white hover:cursor-pointer transition duration-100 ease-in-out text-lg font-semibold" onclick="openPopup(5)">
+    <img src="./fa-book-open.png" alt="book" class="w-4 h-4" />
+    <i>Lesson -7</i>
+  </button>
+  <br />
+
+    <br />
+      <br />
+        <br />
+
+  <!-- Modal -->
+  <div id="popupModal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="wordTitle"></h2>
+      <p><strong>Meaning:</strong> <span id="meaningText"></span></p>
+      <p><strong>Example:</strong> <span id="exampleText"></span></p>
+      <p><strong>Similar Words:</strong></p>
+      <div id="similarWords"></div>
+      <button class="close-btn" onclick="closePopup()">Complete Learning</button>
+    </div>
+  </div>
+
+<br />
+      <br />
+        <br />
 
 </div>
+
+<div id="petsContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"></div>
+
+
+</section>
 <br>
 <br>
+<div id="petsContainer"></div>
 <br>
 
 <div class="p-6 py-12 dark:bg-violet-600 dark:text-gray-50">
-	<div class="container mx-auto">
+	<div class="container mx-auto ">
 		
 			<div class="space-x-2 text-center py-2 lg:py-0">
         
@@ -249,6 +307,7 @@
 		</div>
 	</div>
 </div>
+
      
 
 
@@ -340,8 +399,8 @@
     <!-- js script  -->
     
     <script src="./script/index.js"></script>
-    <script src="./script/app.js"></script>
-    <script src="./script/toggle.js"></script>
+   <script src="./script/index2.js"></script>
+    
    
 
     
